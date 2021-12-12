@@ -1,0 +1,195 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 2;
+    background-color: #FCFCFC;
+}
+
+/* ------------Used by Sidebar---------------------------------- */
+.sidebar{
+    margin: 0;
+    padding: 15px;
+    height: 950px;
+    width: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+    text-align: justify;
+    position: relative;
+    display: inline-block;
+    
+}
+.container{
+    align-items: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    text-align: center;
+}
+
+
+a { 
+    color: inherit;
+    text-decoration: none; 
+    display: flexbox;
+} 
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.logout{
+    margin-top: 450px;
+}
+p{
+    margin: 10px;
+}
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: box-shadow .3s;
+    width: 150px;
+    height: 120px;
+    border-radius:10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color:#0800FF;
+    fill:#0800FF;
+    margin: auto;
+    padding-top: 15px;
+    
+} 
+
+/* -----------Main Content------------------------------------------- */
+.text-design{
+    color: #212470;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ----------------Left Content------------- */
+.left-container{
+    display: inline-block;
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+    position: absolute;
+    top: 0;
+}
+.overview{
+    font-size: 60px;
+}
+
+.sub-content{
+    color: #707070;
+    margin-top: -4rem;
+    margin-left: .5rem;
+}
+/* -------------------Right Content---------------- */
+.right-container{
+    display: inline-block;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.right-position1{
+    padding: 6.5rem 30rem 2.5rem 2.5rem;
+}
+.right-position2{
+    padding: 6rem 17rem 2.5rem 2.5rem;
+}
+.right-position3{
+    padding: 6rem 13rem 2rem 2rem;
+}
+.right-position4{
+    padding: 6rem 16rem 2rem 2rem;
+}
+.admin-form{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 30px;
+    
+}
+
+
+.green-border-rectangle{
+    width: 140px;
+    height: 66px;
+    border: 1px solid #23D62F;
+    border-radius:20px;
+    background: #23D62F;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+    margin: auto;
+}
+
+
+.yellow-border-rectangle{
+    width: 150px;
+    height: 70px;
+    border: 1px solid #F3F090;
+    border-radius:20px;
+    background: #F3F090;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+    margin: auto;
+}
+
+.img-position{
+    margin-right: 60px;
+    margin-top: -25px;
+}
+
+
+
+/* ------------------------middle container--------------------------------------------------------- */
+
+
+.middle-container1{
+    display: inline-block;
+    padding: 13rem 2.5rem 2.5rem 30rem;
+    position: absolute;
+    top: 0; 
+}
+
+.data-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+.data{
+    margin: 20px 30px 10px 50px;
+    letter-spacing: 5px;
+}
+
+
+.middle-container2{
+    display: inline-block;
+    padding: 12.9rem 2.5rem 2.5rem 60rem;
+    position: absolute;
+    top: 0; 
+}
+
+.middle-container3{
+    display: inline-block;
+    padding: 28rem 2.5rem 2.5rem 10rem;
+    position: absolute;
+    top: 0; 
+}
+.middle-container-viewDoctor{
+    display: inline-block;
+    padding: 17rem 2.5rem 2.5rem 10rem;
+    position: absolute;
+    top: 0; 
+}
+.middle-container-addDoctor{
+    display: inline-block;
+    padding: 10rem 2.5rem 2.5rem 15rem;
+    position: absolute;
+    top: 0; 
+}
+
+.table{
+    margin-top: -30px;
+    margin-left:-20px;
+}

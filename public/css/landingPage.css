@@ -1,0 +1,164 @@
+:root{
+    --main: #FF0073;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* top container */
+
+/* Navigation bar */
+.navbar{
+    margin: 30px 20px 1rem 15rem;
+    
+}
+.navbar-brand{
+    /* margin-left: 20px; */
+    font-weight: 900;
+    font-size: 1.7rem;
+    color:#3E3E3E;
+}
+.navbar-nav{
+    position: relative;
+    left: 20rem;
+    z-index: 3;
+}
+a{
+    color:#E3EAF8;
+    font-weight: 400;
+    margin-right: 1.5rem;
+}
+.triangle{
+    position: absolute;
+    left: 11rem;
+    top: .8rem;
+}
+.login{
+    font-weight: 700;
+    background-color: var(--main);
+    border-style: solid;
+    border-color: var(--main);
+
+}
+/*-------------------------  */
+.landing-page{
+    background-color: #E3EAF8;
+    position: relative;
+    z-index: 2;
+    border-radius: 15% 0 0;
+}
+.bg-img{
+    width: 75rem;
+    position: absolute;
+    z-index: -1;
+    right: -5rem;
+    top: -25rem;
+}
+.business-man{
+    margin-bottom: 10rem;
+}
+.title-page{
+    color: #3E3E3E;
+    margin: 13rem 2rem 3.4rem 9rem;
+    font-weight: 700;
+    font-size: 4.3rem;
+    text-align: left;
+}
+.medical{
+    color: var(--main);
+}
+.get-started{
+    padding: .8rem 2rem;
+    text-align: left;
+    margin-left: -21rem;
+}
+i{
+    margin-left: .5rem;
+}
+.scroll{
+    position: absolute;
+    bottom: 9rem;    
+}
+
+/* ABOUT US */
+
+#about{
+    margin: 10rem 5rem;
+}
+p{
+    text-align: left;
+    font-size: 1.7rem;
+    line-height: 3rem;
+    margin: 2rem .5rem; 
+}
+.main-features{
+    text-align: center;
+    margin-bottom: 7rem;
+}
+.sub-features{
+    color: var(--main);
+    font-weight: 600;
+}
+.features{
+    margin-right: 2rem;
+    color: var(--main);
+}
+.text-features{
+    margin-left: 5rem;
+}
+.choose{
+    color: var(--main);
+    font-weight: 700;
+    font-size: 3rem;
+}
+/* products */
+.product-title{
+    margin-bottom: 50rem;
+}
+
+/* contact */
+.uni{
+    text-align: left;
+    position: relative;
+    width: 7%;
+    display: inline;;
+    margin-bottom: 1rem;
+}
+/* footer */
+.contactUs{
+    font-size: 2rem;
+    font-weight: 700;
+}
+footer{
+    background-color: #3E3E3E;
+    color: white;
+    padding: 4rem;
+}
+.list-item{
+    display:inline;
+    font-size: 1rem;
+}
+.list{
+    margin: 2rem 2rem;
+}
+
+
+
+.btn-link {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: #0000EE;
+    padding: 0;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: inherit;
+}
