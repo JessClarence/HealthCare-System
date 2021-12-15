@@ -119,8 +119,11 @@ p{
     font-size: 3rem;
 }
 /* products */
+#products{
+    margin-bottom: 10rem;
+}
 .product-title{
-    margin-bottom: 50rem;
+    margin-bottom: 5rem;
 }
 
 /* contact */
@@ -147,6 +150,16 @@ footer{
 }
 .list{
     margin: 2rem 2rem;
+}
+.change-design{
+    background-color: white;
+    border-color: white;
+    border-style: none;
+    z-index:0;
+    width:10;
+}
+.w-50{
+    margin: auto;
 }
 
 

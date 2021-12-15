@@ -32,6 +32,17 @@ app.get('/member-request-chat', (req,res)=>{
 });
 
 
+app.get('/doctor-details', (req,res)=>{
+    res.render("./doctor/details");
+});
+app.get('/doctor-request-chat', (req,res)=>{
+    res.render("./doctor/doctorRequestChat");
+});
+app.get('/doctor-view-user', (req,res)=>{
+    res.render("./doctor/viewUser");
+});
+
+
 
 
 app.post('/sign-In', (req, res)=>{
@@ -39,7 +50,14 @@ app.post('/sign-In', (req, res)=>{
 });
 app.post('/dashboard', (req, res)=>{
     res.render("home");
-})
+});
+app.post('/member-view-doctor', (req, res)=>{
+    res.render("./member/memberViewDoctor");
+});
+app.post('/doctor-details', (req, res)=>{
+    res.render("./doctor/details");
+});
+
 
 app.listen(port, ()=>{
     console.log("...port is running");
