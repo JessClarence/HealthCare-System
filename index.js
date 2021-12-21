@@ -1,12 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+
+
 
 const app = express();
-const port = process.env.port || 3000;
+
+dotenv.config({path:'config.env'})
+const port = process.env.port || 8080;
+
+
 app.set('view engine', 'ejs');
+
+
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(morgan('tiny'));
 
 app.get('/', (req, res)=>{
     res.render("landingPage");
@@ -60,5 +71,5 @@ app.post('/doctor-details', (req, res)=>{
 
 
 app.listen(port, ()=>{
-    console.log("...port is running");
+    console.log(`...port is running at ${port}`);
 });
