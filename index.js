@@ -2,13 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const axios = require('axios');
 
 
+const connectDB = require('./server/database/connection');
 
 const app = express();
 
 dotenv.config({path:'config.env'})
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 
 app.set('view engine', 'ejs');
@@ -19,55 +21,44 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(morgan('tiny'));
 
-app.get('/', (req, res)=>{
-    res.render("landingPage");
-});
-
-
-app.get('/dashboard', (req,res)=>{
-    res.render("home");
-});
-app.get('/viewDoctor', (req,res)=>{
-    res.render("viewDoctor");
-});
-app.get('/addDoctor', (req,res)=>{
-    res.render("addDoctor");
-});
-
-
-app.get('/member-view-doctor', (req,res)=>{
-    res.render("./member/memberViewDoctor");
-});
-app.get('/member-request-chat', (req,res)=>{
-    res.render("./member/memberRequestChat");
-});
-
-
-app.get('/doctor-details', (req,res)=>{
-    res.render("./doctor/details");
-});
-app.get('/doctor-request-chat', (req,res)=>{
-    res.render("./doctor/doctorRequestChat");
-});
-app.get('/doctor-view-user', (req,res)=>{
-    res.render("./doctor/viewUser");
-});
+//MongoDB connection
+connectDB();
 
 
 
+app.use('/', require('./server/routes/router'));
 
+// LANDING PAGE WHERE LOGIN BUTTONS CHANGE TO THE SIGN IN DIRECTORY
 app.post('/sign-In', (req, res)=>{
-    res.render("signIn");
+    res.render("./signIn/signIn");
 });
+
+
+// DIRECTS TO MEMBER'S UI
+app.post('/member-signIn', (req, res)=>{
+    res.render("./signIn/signIn-member");
+});
+
+// DIRECTS TO ADMIN'S UI
 app.post('/dashboard', (req, res)=>{
-    res.render("home");
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){  
+            res.render('home', {users: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
 });
-app.post('/member-view-doctor', (req, res)=>{
-    res.render("./member/memberViewDoctor");
-});
+
+
+// app.post('/member-view-doctor', (req, res)=>{
+//     res.render("./member/memberViewDoctor");
+// });
 app.post('/doctor-details', (req, res)=>{
     res.render("./doctor/details");
 });
+
+
 
 
 app.listen(port, ()=>{

@@ -99,7 +99,7 @@
 
 <div class="middle-container1">
     <h1 class="data-text">USERS</h1>
-    <h1 class="text-design data">1000</h1>
+    <h1 class="text-design data"><%=users.length%></h1>
 </div>
 
 <div class="middle-container2">
@@ -109,66 +109,61 @@
 </div>
 
 
-<!--  USE SOME SORT OF FORM HERE -->
 
  <div class="middle-container3">
     <p>_____________________________________________________________________________________________________________________________________________________________________________________________</p>
     <h2 class="text-design data">USERS</h2>
 
-    <svg id="Component_2_1" data-name="Component 2 – 1" xmlns="http://www.w3.org/2000/svg" width="1353" height="69" viewBox="0 0 1353 69">
-        <rect id="Rectangle_6" data-name="Rectangle 6" width="1350" height="69" rx="10" transform="translate(3)" fill="#e4e9f1"/>
-        <rect id="Rectangle_13" data-name="Rectangle 13" width="264" height="69" rx="10" fill="#cbcbcb"/>
-        <text id="ID_Number" data-name="ID Number" transform="translate(47 45)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">ID Number</tspan></text>
-        <text id="Name" transform="translate(301 46)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Name</tspan></text>
-        <text id="Mobile_No." data-name="Mobile No." transform="translate(570 45)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Mobile No.</tspan></text>
-        <text id="Email" transform="translate(833 45)" font-size="25" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">Email</tspan></text>
-        <g id="Component_1_1" data-name="Component 1 – 1" transform="translate(186 25)">
-          <path id="Polygon_1" data-name="Polygon 1" d="M6.5,0,13,8H0Z"/>
-          <path id="Polygon_2" data-name="Polygon 2" d="M6.5,0,13,8H0Z" transform="translate(13 21) rotate(180)" fill="#dfdfdf"/>
-        </g>
-        <g id="Component_1_2" data-name="Component 1 – 2" transform="translate(382 25)">
-          <path id="Polygon_1-2" data-name="Polygon 1" d="M6.5,0,13,8H0Z"/>
-          <path id="Polygon_2-2" data-name="Polygon 2" d="M6.5,0,13,8H0Z" transform="translate(13 21) rotate(180)" fill="#dfdfdf"/>
-        </g>
-        <g id="Component_1_5" data-name="Component 1 – 5" transform="translate(702 25)">
-          <path id="Polygon_1-3" data-name="Polygon 1" d="M6.5,0,13,8H0Z"/>
-          <path id="Polygon_2-3" data-name="Polygon 2" d="M6.5,0,13,8H0Z" transform="translate(13 21) rotate(180)" fill="#dfdfdf"/>
-        </g>
-        <g id="Component_1_6" data-name="Component 1 – 6" transform="translate(907 29)">
-          <path id="Polygon_1-4" data-name="Polygon 1" d="M6.5,0,13,8H0Z"/>
-          <path id="Polygon_2-4" data-name="Polygon 2" d="M6.5,0,13,8H0Z" transform="translate(13 21) rotate(180)" fill="#dfdfdf"/>
-        </g>
-    </svg>
-      
-      
-      <div class="table">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1395" height="114" viewBox="0 0 1395 114">
-            <defs>
-              <filter id="Rectangle_5" x="0" y="0" width="1395" height="114" filterUnits="userSpaceOnUse">
-                <feOffset dy="3" input="SourceAlpha"/>
-                <feGaussianBlur stdDeviation="7.5" result="blur"/>
-                <feFlood flood-opacity="0.161"/>
-                <feComposite operator="in" in2="blur"/>
-                <feComposite in="SourceGraphic"/>
-              </filter>
-            </defs>
-            <g id="Component_3_1" data-name="Component 3 – 1" transform="translate(22.5 19.5)">
-              <g transform="matrix(1, 0, 0, 1, -22.5, -19.5)" filter="url(#Rectangle_5)">
-                <rect id="Rectangle_5-2" data-name="Rectangle 5" width="1350" height="69" transform="translate(22.5 19.5)" fill="#d8d8d8"/>
-              </g>
-              <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(1)" fill="#fff" stroke="#707070" stroke-linejoin="round" stroke-width="1">
-                <rect width="1350" height="69" rx="10" stroke="none"/>
-                <rect x="0.5" y="0.5" width="1349" height="68" rx="9.5" fill="none"/>
-              </g>
-            </g>
-          </svg> -->
+    <!-- Main Site Here -->
 
+    <main id="site-main">
+        <div class="container1">
+            <!-- <div class="box-nav d-flex justify-between">
+                <a href="/add-user"class="border-shadow">
+                    <span class="text-gradient">New User
+                        <i class="fas fa-user"></i>
+                    </span>
+                </a>
+            </div> -->
+    
 
-          <form action="/" method="post">
-            <input type="text" name="items" placeholder="Add Item" autocomplete="off">
-            <button type="submit" name="list" value= "list" >+</button>
-        </form>
-      </div>
+            <form action="/dashboard" method="post">
+                <table class="table1">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID Number</th>
+                            <th>Name</th>
+                            <th>Mobile No.</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < users.length; i++){ %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= users[i].name %></td>
+                            <td><%= users[i].mobileNo %></td>
+                            <td><%= users[i].email %></td>
+                            <td>
+                                <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+                                    <span class="text-gradient">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
+                                    <span class="text-gradient">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
     
     
       
@@ -180,9 +175,9 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/config.js"></script>
 
 
-
- 
 
 <%- include('./partials/footer'); -%>
