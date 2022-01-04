@@ -112,6 +112,7 @@ p{
 }
 .text-features{
     margin-left: 5rem;
+    text-align: justify;
 }
 .choose{
     color: var(--main);

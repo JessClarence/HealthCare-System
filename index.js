@@ -69,9 +69,17 @@ app.post('/doctor-signIn', (req, res)=>{
 });
 
 
-// app.post('/member-view-doctor', (req, res)=>{
-//     res.render("./member/memberViewDoctor");
-// });
+app.post('/member-view-doctor', (req, res)=>{
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){  
+            res.render('./member/memberViewDoctor', {users: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
+});
+
+
 app.post('/doctor-details', (req, res)=>{
     res.render("./doctor/details");
 });
