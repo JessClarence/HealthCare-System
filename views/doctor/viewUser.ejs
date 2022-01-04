@@ -99,16 +99,7 @@
 
     <main id="site-main">
         <div class="container1">
-            <!-- <div class="box-nav d-flex justify-between">
-                <a href="/add-user"class="border-shadow">
-                    <span class="text-gradient">New User
-                        <i class="fas fa-user"></i>
-                    </span>
-                </a>
-            </div> -->
-    
-
-            <form action="/dashboard" method="post">
+            <form action="/doctor-view-user" method="post">
                 <table class="table1">
                     <thead class="thead-dark">
                         <tr>
@@ -120,25 +111,26 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        <% for(var i=0; i < use.length; i++){ %>
                         <tr>
-                            <td>1</td>
-                            <td>hello</td>
-                            <td>094xxxxxx</td>
-                            <td>jess@gmail.com</td>
+                            <td><%= i + 1 %></td>
+                            <td><%= use[i].name %></td>
+                            <td><%= use[i].mobileNo %></td>
+                            <td><%= use[i].email %></td>
                             <td>
-                                <a href="/update-user" class="btn border-shadow update">
+                                <a href="#" class="btn border-shadow update">
                                     <span class="text-gradient">
                                         <i class="fas fa-check"></i>
                                     </span>
                                 </a>
-                                <a href="#" class="btn border-shadow delete">
+                                <a  class="btn border-shadow delete" data-id=<%=use[i]._id%>>
                                     <span class="text-gradient">
                                         <i class="fas fa-times"></i>
                                     </span>
                                 </a>
                             </td>
                         </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </form>

@@ -5,6 +5,7 @@ const route = express.Router();
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+const doctor = require('../controller/doctor');
 
 /*
     @description Root Route
@@ -15,12 +16,14 @@ const controller = require('../controller/controller');
 route.get('/', services.homeRoutes);
 
 /*
-    @description for sign In Members
+    @description for sign In 
     @method GET /member-signIn
 
 */
 
 route.get('/member-signIn', services.memberSignIn);
+route.get('/admin-signIn', services.adminSignIn);
+route.get('/doctor-signIn', services.doctorSignIn);
 
 
 /*
@@ -70,6 +73,11 @@ route.post('/api/users', controller.create);
 route.get('/api/users', controller.find);
 route.put('/api/users/:id', controller.update);
 route.delete('/api/users/:id', controller.delete);
+
+route.post('/api/uses', doctor.create);
+route.get('/api/uses', doctor.find);
+route.put('/api/uses/:id', doctor.update);
+route.delete('/api/uses/:id', doctor.delete);
 
 
 

@@ -20,12 +20,26 @@ exports.adminDashboard = (req,res) =>{
         })
 }
 
+
 exports.adminViewDoctor = (req,res)=>{
-    res.render("viewDoctor");
+     axios.get('http://localhost:3000/api/uses')
+        .then(function(response){ 
+            res.render('viewDoctor', {uses: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
 }
 
 exports.adminAddDoctor = (req,res)=>{
-    res.render("addDoctor");
+    
+    axios.get('http://localhost:3000/api/uses')
+        .then(function(response){ 
+            res.render('addDoctor', {users: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
 }
 
 exports.updateUser = (req,res)=>{
@@ -38,12 +52,28 @@ exports.updateUser = (req,res)=>{
     })
 }
 
+exports.adminSignIn = (req,res)=>{
+    res.render('./signIn/signIn-admin');
+}
+
+
 exports.memberViewDoctor = (req,res)=>{
-    res.render("./member/memberViewDoctor");
+    axios.get('http://localhost:3000/api/uses')
+        .then(function(response){ 
+            res.render('./member/memberViewDoctor', {uses: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
 }
 
 exports.memberRequestChat = (req,res)=>{
     res.render("./member/memberRequestChat");
+}
+
+
+exports.doctorSignIn = (req,res)=>{
+    res.render('./signIn/signIn-doctor');
 }
 
 exports.doctorDetail = (req,res)=>{
@@ -55,5 +85,11 @@ exports.doctorRequestChat = (req,res)=>{
 }
 
 exports.doctorViewUser = (req,res)=>{
-    res.render("./doctor/viewUser");
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){ 
+            res.render('doctor/viewUser', {use: response.data});
+        })
+        .catch( err =>{
+            res.send(err);
+        })
 }

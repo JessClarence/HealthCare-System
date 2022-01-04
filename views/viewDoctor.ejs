@@ -114,15 +114,17 @@
                       <th>Email</th>
                   </tr>
               </thead>
-              <tbody>            
-                  <tr>
-                      <td>1</td>
-                      <td>jess</td>
-                      <td>Physician</td>
-                      <td>BBM</td>
-                      <td>09xxxxxx</td>
-                      <td>je@gmail.com</td>
-                  </tr>
+              <tbody>
+                  <% for(var i=0; i < uses.length; i++){ %>            
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= uses[i].name %></td>
+                        <td><%= uses[i].role %></td>
+                        <td><%= uses[i].qualification %></td>
+                        <td><%= uses[i].mobileNo %></td>
+                        <td><%= uses[i].email %></td>
+                    </tr>
+                  <% } %>
                   </tbody>
               </table>
           </form>

@@ -33,6 +33,10 @@ app.post('/sign-In', (req, res)=>{
     res.render("./signIn/signIn");
 });
 
+app.post('/admin-signIn', (req,res)=>{
+    res.render('./signIn/signIn-admin');
+});
+
 
 // DIRECTS TO MEMBER'S UI
 app.post('/member-signIn', (req, res)=>{
@@ -48,6 +52,11 @@ app.post('/dashboard', (req, res)=>{
         .catch( err =>{
             res.send(err);
         })
+});
+
+// DIRECTS TO DOCTOR'S UI
+app.post('/doctor-signIn', (req, res)=>{
+    res.render("./signIn/signIn-doctor");
 });
 
 
