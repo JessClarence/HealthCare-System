@@ -45,10 +45,19 @@ app.post('/member-signIn', (req, res)=>{
 
 // DIRECTS TO ADMIN'S UI
 app.post('/dashboard', (req, res)=>{
-    axios.get('http://localhost:3000/api/users')
-        .then(function(response){  
-            res.render('home', {users: response.data});
-        })
+    let one = 'http://localhost:3000/api/users';
+    let two = 'http://localhost:3000/api/uses';
+
+    const requestOne = axios.get(one);
+    const requestTwo = axios.get(two);
+
+    axios.all([requestOne, requestTwo])
+        .then(axios.spread((...responses) => { 
+            const responseOne = responses[0]
+            const responseTwo = responses[1]
+
+            res.render('home', {users: responseOne.data, uses: responseTwo.data});
+        }))
         .catch( err =>{
             res.send(err);
         })
